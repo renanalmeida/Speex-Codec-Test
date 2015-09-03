@@ -1,0 +1,52 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := libspeexdsp
+LOCAL_CFLAGS = -DFIXED_POINT -DUSE_KISS_FFT -DEXPORT="" -UHAVE_CONFIG_H
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
+
+LOCAL_SRC_FILES :=  \
+./libspeexdsp/buffer.c \
+./libspeexdsp/exc_10_16_table.c \
+./libspeexdsp/exc_10_32_table.c \
+./libspeexdsp/exc_20_32_table.c \
+./libspeexdsp/exc_5_256_table.c \
+./libspeexdsp/exc_5_64_table.c \
+./libspeexdsp/exc_8_128_table.c \
+./libspeexdsp/fftwrap.c \
+./libspeexdsp/filterbank.c \
+./libspeexdsp/filters.c \
+./libspeexdsp/gain_table.c \
+./libspeexdsp/gain_table_lbr.c \
+./libspeexdsp/hexc_10_32_table.c \
+./libspeexdsp/hexc_table.c \
+./libspeexdsp/high_lsp_tables.c \
+./libspeexdsp/jitter.c \
+./libspeexdsp/kiss_fft.c \
+./libspeexdsp/kiss_fftr.c \
+./libspeexdsp/lpc.c \
+./libspeexdsp/lsp.c \
+./libspeexdsp/lsp_tables_nb.c \
+./libspeexdsp/ltp.c \
+./libspeexdsp/mdf.c \
+./libspeexdsp/modes.c \
+./libspeexdsp/modes_wb.c \
+./libspeexdsp/nb_celp.c \
+./libspeexdsp/preprocess.c \
+./libspeexdsp/quant_lsp.c \
+./libspeexdsp/resample.c \
+./libspeexdsp/sb_celp.c \
+./libspeexdsp/scal.c \
+./libspeexdsp/smallft.c \
+./libspeexdsp/speex.c \
+./libspeexdsp/speex_callbacks.c \
+./libspeexdsp/speex_header.c \
+./libspeexdsp/stereo.c \
+./libspeexdsp/vbr.c \
+./libspeexdsp/vq.c \
+./libspeexdsp/window.c \
+./wrapper.cpp
+
+include $(BUILD_SHARED_LIBRARY)
+
